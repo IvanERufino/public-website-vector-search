@@ -1,0 +1,21 @@
+gunicorn==20.1.0; python_version > '3.0'
+gunicorn==19.10.0; python_version < '3.0'
+uvicorn~=0.17.0
+fastapi~=0.83.0
+cloudpickle==2.2.1
+google-cloud-aiplatform==1.33.1
+h5py==3.8.0
+grpcio==1.58.0
+urllib3==1.26.16
+langchain==0.0.308
+typing-inspect==0.8.0
+typing_extensions==4.5.0
+pydantic==1.10.8
+google-cloud-logging==3.7.0
+
+xmltodict==0.13.0
+unstructured==0.7.0 # used by langchain
+pdf2image==1.16.3 #used by langchain
+requests==2.31.0
+beautifulsoup4==4.12.2
+tabulate==0.9.0
