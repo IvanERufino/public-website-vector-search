@@ -1,5 +1,9 @@
 # Public Website Vector Search
 
+## Architecture
+
+![](/images/Public-website-vector-search.png)
+
 ## Endpoints
 
 ### Public URL load
