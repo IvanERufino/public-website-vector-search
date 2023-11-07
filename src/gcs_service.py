@@ -1,4 +1,6 @@
+from fastapi import HTTPException
 from google.cloud import storage
+from src.logger import logger
 
 PUBLIC_WEBSITES_PATH = "public_websites"
 DOCUMENTS_PATH = "documents"
@@ -12,8 +14,11 @@ class GCSService:
         self.bucket_name: str = bucket_name
         self.new_bucket = not self.bucket.exists()
         if self.new_bucket:
-            self.bucket.create()
-    
+            try:
+                self.bucket.create()
+            except Exception as e:
+                logger.log_text(f"Error creating bucket {bucket_name}", e)
+                raise HTTPException(status_code=400, detail="Invalid bucket name")
 
     def create_document(self, file_name: str, content: str):
         self.create(f"{PUBLIC_WEBSITES_PATH}/{DOCUMENTS_PATH}/{file_name}", content)
