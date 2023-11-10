@@ -6,7 +6,7 @@ from src.model import PublicURL
 
 def index_update(genericUrl: PublicURL, gcs_service: GCSService, index_service: IndexService):
         index_name = genericUrl.index_name
-        name = genericUrl.name
+        name = genericUrl.prefix_name
         url = genericUrl.url
         
         logger.log_text(f"[{name}] Public URL index updation has started for: {url}")
